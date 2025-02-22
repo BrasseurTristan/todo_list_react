@@ -2,17 +2,18 @@
 
 import styles from "./taskItem.module.css";
 
-export const TaskItem = () => {
-
+export const TaskItem = ({ task, editTask, deleteTask }) => {
+    console.log(task);
     return (
 
-        <li className={`${styles.container} ${styles.default}`}>
+        <li className={`${styles.container} ${task.completed ? styles.success : styles.default}`}
+            onClick={() => editTask(task.id, !task.completed)} >
             <div className={styles.item}>
                 <div className={`${styles.id} ${styles.idDefault}`}>
-                    Id
+                    {task.id}
                 </div>
-                <div className={styles.contentDefault}>
-                    Titre
+                <div className={task?.completed ? styles.contentSuccess : styles.contentDefault}>
+                    {task.title}
                 </div>
             </div>
             <button className="button-primary">
