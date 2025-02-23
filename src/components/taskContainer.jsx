@@ -45,7 +45,7 @@ export const TaskContainer = () => {
             <Header />
             <TaskInput addTask={addTask} />
             <TaskList tasksList={tasksList} editTask={editTask} deleteTask={deleteTask} incompletedTasks={incompletedTasks} />
-            <Footer />
+            <Footer completedTasks={completedTasks} />
         </main>
     )
 }
