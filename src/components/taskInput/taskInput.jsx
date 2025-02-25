@@ -1,34 +1,40 @@
-// Ce composant sera utilisé pour afficher le champ de saisie de tâche.
-
+// Ce composant est utilisé pour afficher le champ de saisie de tâche.
 import { useState } from 'react';
-import styles from './TaskInput.module.css'
+import styles from './TaskInput.module.css';
 import { TaskList } from '../taskList/taskList';
 
 export const TaskInput = ({ addTask }) => {
-
+    // État local pour stocker le titre de la tâche en cours de saisie
     const [taskTitle, setTaskTitle] = useState("");
 
+    // Fonction qui met à jour le titre de la tâche lorsque l'utilisateur tape
     const handleInputChange = (e) => {
-        // On insère chaque changement capturer dans taskTitle grâce à setTaskTitle
         setTaskTitle(e.target.value);
-    }
+    };
+
+    // Fonction pour ajouter une nouvelle tâche
     const handleAddTask = (e) => {
-        // on empêche le rechargement de la page 
-        e.preventDefault();
-        if (taskTitle.trim()) {
-            // on utilise la fonction qu'on a importer de taskContainer pour y insérer le titre
-            addTask(taskTitle);
-            // On vide setTaskTitle
-            setTaskTitle("");
+        e.preventDefault(); // Empêche le rechargement de la page lors de la soumission
+
+        if (taskTitle.trim()) { // Vérifie que le champ n'est pas vide
+            addTask(taskTitle); // Ajoute la tâche via la fonction passée en prop
+            setTaskTitle(""); // Réinitialise le champ de saisie après l'ajout
         }
-    }
+    };
+
     return (
         <div className={`box ${styles.element}`}>
-            <h2 className={styles.title}> Ajoute ta nouvelle tâche</h2>
-            {/* On éxécute la fonction handleAddTask lors de la soumission du formulaire  */}
+            <h2 className={styles.title}>Ajoute ta nouvelle tâche</h2>
+            {/* Formulaire de saisie de tâche */}
             <form className={styles.container} onSubmit={handleAddTask}>
-                {/* Dans l'input la fonction handleInputChange capture chaques changements */}
-                <input className={styles.input} type="text" placeholder='Indiquez un titre de tâche explicite.' onChange={handleInputChange} value={taskTitle} />
+                {/* Champ de saisie avec gestion de l'état en temps réel */}
+                <input
+                    className={styles.input}
+                    type="text"
+                    placeholder='Indiquez un titre de tâche explicite.'
+                    onChange={handleInputChange}
+                    value={taskTitle}
+                />
                 <button className="button-primary" type='submit'>Ajouter</button>
             </form>
         </div>

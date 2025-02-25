@@ -58,6 +58,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #141414;
 }
 
 h1 {
@@ -117,10 +118,6 @@ a:focus-visible {
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
 
   a:hover {
     color: #747bff;
