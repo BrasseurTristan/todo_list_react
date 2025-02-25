@@ -1,8 +1,35 @@
-# React + Vite
+# Projet Todo List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ce projet est une application de gestion de tâches interactive construite en React. Il permet d'ajouter, modifier et supprimer des tâches tout en affichant le nombre de tâches complétées et en cours.
 
-Currently, two official plugins are available:
+## Source du projet
+Ce projet a été réalisé en suivant le tutoriel de la vidéo suivante :  
+[Créer une Todo List avec React - Remote Monkey](https://www.youtube.com/watch?v=yFj9JsTlkyg&ab_channel=RemoteMonkey)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies utilisées
+- React.js
+- CSS Modules
+
+## Fonctionnalités
+- Ajouter une nouvelle tâche
+- Modifier l'état d'une tâche (complétée ou non)
+- Supprimer une tâche
+- Afficher le nombre de tâches complétées et restantes
+
+## Installation et exécution
+1. **Cloner le projet**
+```bash
+    git clone https://github.com/BrasseurTristan/todo_list_react.git
+```
+2. **Accéder au dossier du projet**
+```bash
+    cd todo_list_react
+```
+3. **Installer les dépendances**
+```bash
+    npm install
+```
+4. **Lancer l'application**
+```bash
+    npm run preview
+```
